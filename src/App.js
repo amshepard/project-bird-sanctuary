@@ -1,3 +1,9 @@
+import { useState } from "react";
+import BirdCard from "./Components/BirdCard";
+import Cart from "./Components/Cart";
+import Checkout from "./Components/Checkout";
+
+
 function App () {
   return (
     <div>

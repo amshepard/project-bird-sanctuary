@@ -1,6 +1,6 @@
 import birds from '../data/birds'
 
-function BirdCard() {
+function BirdCard({}) {
   return (
     <div>BirdCard</div>
   )
