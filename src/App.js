@@ -1,6 +1,6 @@
 
 import './App.css'
-import { useState } from "react";
+// import { useState } from "react";
 import birdData from "./data/birds";
 import BirdCard from "./Components/BirdCard";
 import Cart from "./Components/Cart";
