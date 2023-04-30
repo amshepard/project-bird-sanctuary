@@ -1,0 +1,26 @@
+body {
+    text-align: center;
+}
+
+.app {
+    border: 20px solid  #CCFF00;
+    border-radius: 10px;
+    width: 97%;
+    display: grid;
+}
+
+.card {
+    border: 2px solid #CCFF00;
+    border-radius: 10px;
+}
+
+h1 {
+    grid-area: title;
+    background-color: black;
+    background-position: center;
+    font-family: 'Bangers', cursive;
+    text-decoration: underline;
+    text-decoration-style: double;
+    color: #CCFF00;
+    border-radius: 10000px;
+}
