@@ -1,9 +1,8 @@
 
 import './App.css'
-// import { useState } from "react";
-import birdData from "./data/birds";
+import { useState } from "react";
+import birdData from './data/birds';
 import BirdCard from "./Components/BirdCard";
-import Cart from "./Components/Cart";
 
 
 function App () {
@@ -14,7 +13,7 @@ function App () {
 
   return (
     <div>
-      <h1 className='header'>Hyothetical Hippogriff Haven</h1>
+      <h1 className='header'>Hypothetical Hippogriff Haven</h1>
       <style> @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');</style>
 
       <div className='birdcard'>
