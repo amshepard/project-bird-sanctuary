@@ -1,4 +1,4 @@
-// import birdData from '../data/birds' 
+ 
 
 export default function BirdCard({bird, adoptBird }) {
 

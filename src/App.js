@@ -17,15 +17,16 @@ function App () {
       <style> @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');</style>
 
       <div className='birdcard'>
-        {
-          birdData.map((bird) => {
-            return <BirdCard
-              key={bird.id}
-              bird={bird}
-              adoptBird={adoptBird}
-            />
-          })
-        }
+      {
+        birdData.sort((a, b) => b.amount - a.amount).map((bird) => {
+          return <BirdCard
+            key={bird.amount}
+            bird={bird}
+            adoptBird={adoptBird}
+          />
+        })
+      }
+
       </div>
     </div>
   );
