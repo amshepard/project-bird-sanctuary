@@ -1,9 +1,32 @@
-// import React from 'react'
+export default function Checkout({ cartContent, cartTotal }) {
 
-function Checkout() {
-  return (
-    <div>Checkout</div>
-  )
-}
-
-export default Checkout
+    // Function to display an alert message when the form is submitted
+    function handleSubmit() {
+        alert("You have adopted birds. Thank you!")
+    }
+  
+    // Rendering the JSX elements
+    return (
+        <div className="Checkout">
+            <h4>Checkout</h4>
+            <form onSubmit={handleSubmit}>
+                <label htmlAdd="first">First Name</label>
+                <input type="text" id="first" />
+  
+                <label htmlAdd="last">Last Name</label>
+                <input type="text" id="last" />
+  
+                <label htmlAdd="email">Email</label>
+                <input type="email" id="email" />
+  
+                <label htmlAdd="zipcode">Zip Code
+                    <br />
+                    <input type="number" id="zipcode" />
+                    <br />
+                </label>
+  
+                <input type="submit" value="Submit" className="check-butt" />
+            </form>
+        </div>
+    )
+  }
