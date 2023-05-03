@@ -27,9 +27,9 @@ function App() {
     setCartContent([...cartContent, bird]);
   }
 
-  // Defining the deleteBird function which removes a bird from the cart
-  function deleteBird(birdAdded, i) {
-    // filtering out the bird that needs to be deleted from the cartContent
+  // Defining the removeBird function which removes a bird from the cart
+  function removeBird(birdAdded, i) {
+    // filtering out the bird that needs to be removed from the cartContent
     const filteredCart = cartContent.filter((item, index) => {
       return index !== i
     });
@@ -47,7 +47,7 @@ function App() {
         key="cart"
         cartContent={cartContent}
         cartTotal={cartTotal}
-        deleteBird={deleteBird}
+        removeBird={removeBird}
       />
 
       <div className='birdcard'>
