@@ -7,38 +7,33 @@ import bonusItems from "../data/bonusItems"
 // import the Checkout component from the Checkout file
 import Checkout from "./Checkout" 
 
-// create and export a function component named Cart that accepts three props cartContent, cartTotal, removeBird
-export default function Cart({ cartContent, cartTotal, removeBird }) { 
+// create and export a function component named Cart that accepts three props cartContent, cartTotal, deleteBird
+export default function Cart({ cartContent, cartTotal, deleteBird }) { 
   // initialize the bonuses state to an empty array and setBonuses to update the state
     const [bonuses, setBonuses] = useState([]); 
 
     function addBonus() {
-        // Checks if the cart total is between 100 and 300, and if the item at index 0 in the bonusItems array is not already included in the bonuses array. If true, the item at index 0 in the bonusItems array is added to the bonuses array using the setBonuses() function.
-        if (cartTotal >= 100 && cartTotal < 300 && !bonuses.includes(bonusItems[0])) {
-          setBonuses([...bonuses, bonusItems[0]]);
+      // if cartTotal is greater than or equal to 100 and the first bonus item is not already included in bonuses array
+        if (cartTotal >= 100 && !bonuses.includes(bonusItems[0])) { 
+          // add the first bonus item to the bonuses array
+            setBonuses([...bonuses, bonusItems[0]]); 
+        } else if (cartTotal >= 300 && !bonuses.includes(bonusItems[1])) { // if cartTotal is greater than or equal to 300 and the second bonus item is not already included in bonuses array
+            setBonuses([...bonuses, bonusItems[1]]); // add the second bonus item to the bonuses array
+        } else if (cartTotal >= 500 && !bonuses.includes(bonusItems[2])) { // if cartTotal is greater than or equal to 500 and the third bonus item is not already included in bonuses array
+            setBonuses([...bonuses, bonusItems[2]]); // add the third bonus item to the bonuses array
+        } else if (cartTotal >= 1000 && !bonuses.includes(bonusItems[3])) { // if cartTotal is greater than or equal to 1000 and the fourth bonus item is not already included in bonuses array
+            setBonuses([...bonuses, bonusItems[3]]); // add the fourth bonus item to the bonuses array
         }
-        //Checks if the cart total is between 300 and 500, and if the items at index 0 and index 1 in the bonusItems array are not already included in the bonuses array. If true, the items at index 0 and 1 in the bonusItems array are added to the bonuses array using the setBonuses() function.
-        else if (cartTotal >= 300 && cartTotal < 500 && (!bonuses.includes(bonusItems[0]) || !bonuses.includes(bonusItems[1]))) {
-          setBonuses([...bonuses, bonusItems[0], bonusItems[1]]);
-        }
-        // Checks if the cart total is between 500 and 1000, and if the items at index 0, index 1, and index 2 in the bonusItems array are not already included in the bonuses array. If  true, the items at index 0, 1, and 2 in the bonusItems array are added to the bonuses array using the setBonuses() function.
-        else if (cartTotal >= 500 && cartTotal < 1000 && (!bonuses.includes(bonusItems[0]) || !bonuses.includes(bonusItems[1]) || !bonuses.includes(bonusItems[2]))) {
-          setBonuses([...bonuses, bonusItems[0], bonusItems[1], bonusItems[2]]);
-        }
-        // Checks if the cart total is greater than or equal to 1000, and if the items at index 0, index 1, index 2, and index 3 in the bonusItems array are not already included in the bonuses array. If true, the items at index 0, 1, 2, and 3 in the bonusItems array are added to the bonuses array using the setBonuses() function.
-        else if (cartTotal >= 1000 && (!bonuses.includes(bonusItems[0]) || !bonuses.includes(bonusItems[1]) || !bonuses.includes(bonusItems[2]) || !bonuses.includes(bonusItems[3]))) {
-          setBonuses([...bonuses, bonusItems[0], bonusItems[1], bonusItems[2], bonusItems[3]]);
-        }
-        //Checks if the bonuses array is not empty.
-        if (bonuses) {
-          return (
-            <>
-              {bonuses.map((bonus, index) => <li key={index}>{bonus}</li>)}
-            </>
-          )
-        }
-      }
 
+        if (bonuses) { // if the bonuses array is not empty
+            return ( // return the following JSX
+                <>
+                    {bonuses.map((bonus, index) => <li key={index}>{bonus}</li>)} 
+                    {/* map through the bonuses array and display each bonus item as a list item with a unique key */}
+                </>
+            )
+        }
+    }
 
     return ( // return the following JSX
         <div className="Cart"> 
@@ -64,11 +59,11 @@ export default function Cart({ cartContent, cartTotal, removeBird }) {
                                         onClick={() => {
                                             setBonuses([]); 
                                             // reset the bonuses array to an empty array
-                                            removeBird(item, index) 
-                                            // call the removeBird function with item and index as parameters
+                                            deleteBird(item, index) 
+                                            // call the deleteBird function with item and index as parameters
                                         }}
-                                    >Remove</button> 
-                                    {/* a button to remove the item from the cartContent array */}
+                                    >Delete</button> 
+                                    {/* a button to delete the item from the cartContent array */}
                                 </li>
                             )
                         })

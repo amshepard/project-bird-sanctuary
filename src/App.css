@@ -5,25 +5,15 @@ body {
 .app {
     border: 20px solid  #CCFF00;
     border-radius: 10px;
-    width: 97%;
     display: grid;
     grid-template-areas: 
-        "title  title"
-        "cart   cards"
-        "check  cards";
+    "title  title"
+    "cart   cards"
+    "check  cards";
     grid-template-columns: 1fr 3fr;
+    width: 97%;
 }
 
-h1 {
-    grid-area: title;
-    background-color: black;
-    background-position: center;
-    font-family: 'Bangers', cursive;
-    text-decoration: underline;
-    text-decoration-style: double;
-    color: #CCFF00;
-    border-radius: 10000px;
-}
 
 .birdcards {
     display: flex;
@@ -31,34 +21,46 @@ h1 {
     flex-wrap: wrap;
     margin-left: 5px;
 }
+
 .card {
-    grid-area: cards;
     border: 2px solid #CCFF00;
     border-radius: 10px;
-    width: 180px;
+    grid-area: cards;
     height: 290px;
     margin: 5px;
-    
+    width: 180px;
 }
 
 .Cart {
-    grid-area: cart;
     border: 2px solid #CCFF00;
     border-radius: 10px;
+    grid-area: cart;
     margin-left: 10px;
 }
 
-.top {
-    height: auto;
-}
 
 .Checkout {
-    grid-area: check;
     border: 2px solid #CCFF00;
     border-radius: 10px;
+    grid-area: check;
     padding-top: 50px;
+}
+
+h1 {
+    background-color: black;
+    background-position: center;
+    border-radius: 10000px;
+    color: #CCFF00;
+    font-family: 'Bangers', cursive;
+    grid-area: title;
+    text-decoration: underline;
+    text-decoration-style: double;
 }
 
 img {
     object-fit: cover;
+}
+
+.top {
+    height: auto;
 }

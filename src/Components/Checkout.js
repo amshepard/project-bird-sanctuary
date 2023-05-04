@@ -10,16 +10,16 @@ export default function Checkout({ cartContent, cartTotal }) {
         <div className="Checkout">
             <h4>Checkout</h4>
             <form onSubmit={handleSubmit}>
-                <label htmlAdd="first">First Name</label>
+                <label htmlFor="first">First Name</label>
                 <input type="text" id="first" />
   
-                <label htmlAdd="last">Last Name</label>
+                <label htmlFor="last">Last Name</label>
                 <input type="text" id="last" />
   
-                <label htmlAdd="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input type="email" id="email" />
   
-                <label htmlAdd="zipcode">Zip Code
+                <label htmlFor="zipcode">Zip Code
                     <br />
                     <input type="number" id="zipcode" />
                     <br />

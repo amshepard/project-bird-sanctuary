@@ -1,8 +1,10 @@
+// Importing the birdData object from the birds.js file
 import birdData from '../data/birds' 
 
+// Defining the BirdCard function component that receives `bird` and `adoptBird` as props
 export default function BirdCard({bird, adoptBird }) {
 
-  
+  // Returning the JSX to render a bird card
   return (
       <div className="card birds">
           <h6>{bird.name}</h6>
@@ -10,10 +12,10 @@ export default function BirdCard({bird, adoptBird }) {
           <img
               src={bird.img}
               alt={`${bird.name} ID# ${bird.id}`}
-              width="165px"
-              height="165px"
+              width="125px"
+              height="125px"
           /><br/>
-          <button>Adopt</button>
+          <button onClick={() => adoptBird(bird)}>Adopt</button>
 
       </div>
   )
