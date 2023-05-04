@@ -1,5 +1,8 @@
 // Importing the birdData object from the birds.js file
-import birdData from '../data/birds' 
+import birdData from '../data/birds'
+
+// Sorting the birdData array in descending order based on the amount property
+const sortedBirdData = birdData.sort((a, b) => b.amount - a.amount);
 
 // Defining the BirdCard function component that receives `bird` and `adoptBird` as props
 export default function BirdCard({bird, adoptBird }) {
