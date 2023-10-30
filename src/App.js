@@ -41,7 +41,7 @@ function App() {
   // Rendering the JSX elements
   return (
     <div className="app">
-      <h1 className='header'>Hypothetical Hippogriff Haven</h1>
+      <h1 className='header'>Hello 9.6!! You guys got to my upcycled bird sanctuary.</h1>
       <style> @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');</style>
       <Cart
         key="cart"
